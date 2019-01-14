@@ -39,7 +39,10 @@ public class Main {
 
         textSpace.add(Box.createRigidArea(new Dimension(5,10)));
 
-        JTextArea space = new JTextArea();
+        JTextArea writingSpace = new JTextArea();
+
+        JScrollPane space = new JScrollPane(writingSpace);
+
         space.setFont(new Font("Ariel", Font.PLAIN, 14));
         space.setBorder(BorderFactory.createMatteBorder(0, 4, 1, 4, Color.LIGHT_GRAY));
 
@@ -50,7 +53,7 @@ public class Main {
         BufferedReader in = new BufferedReader(new FileReader(file));
         String line = in.readLine();
         while(line != null){
-            space.append(line + "\n");
+            writingSpace.append(line + "\n");
             line = in.readLine();
         }
         in.close();
@@ -64,7 +67,7 @@ public class Main {
                 PrintWriter stream = null;
                 try {
                     stream = new PrintWriter("Forget-not-content");
-                    stream.write(space.getText());
+                    stream.write(writingSpace.getText());
                     stream.close();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
