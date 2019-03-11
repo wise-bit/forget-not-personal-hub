@@ -1,3 +1,7 @@
+/**
+ * Author: Satrajit
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -20,7 +24,8 @@ public abstract class Screen extends JFrame {
         setTitle(definedTitle);
         setSize(this.definedLength, this.definedWidth);
 
-        setUndecorated(true);
+        // Removes title bar
+        // setUndecorated(true);
 
         this.addWindowListener(new WindowAdapter() {
             @Override
